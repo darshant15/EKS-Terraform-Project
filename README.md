@@ -1,40 +1,248 @@
-# 🚀 Configuring Production-Ready EKS Clusters with Terraform and GitHub Actions
-[![LinkedIn](https://img.shields.io/badge/Connect%20with%20me%20on-LinkedIn-blue.svg)](https://www.linkedin.com/in/aman-devops/)
-[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/jdzF8kTtw2)
-[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@amanpathakdevops)
-[![GitHub](https://img.shields.io/github/stars/AmanPathak-DevOps.svg?style=social)](https://github.com/AmanPathak-DevOps)
-[![Serverless](https://img.shields.io/badge/Serverless-%E2%9A%A1%EF%B8%8F-blueviolet)](https://www.serverless.com)
-[![AWS](https://img.shields.io/badge/AWS-%F0%9F%9B%A1-orange)](https://aws.amazon.com)
-[![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
+# 🚀 Production-Ready Amazon EKS Cluster with Terraform & GitHub Actions
 
-![EKS- GitHub Actions- Terraform](assets/Presentation1.gif)
+[![Terraform](https://img.shields.io/badge/Terraform-v1.6+-7B42BC?logo=terraform)](https://www.terraform.io/)
+[![AWS](https://img.shields.io/badge/AWS-EKS-FF9900?logo=amazonaws)](https://aws.amazon.com/eks/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?logo=githubactions)](https://github.com/features/actions)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-Welcome to the repository for **Configuring Production-Ready EKS Clusters with Terraform and Automating with GitHub Actions**! This repository accompanies my blog post and demonstrates the practical steps to set up and automate an EKS cluster.
+![Architecture](assets/architecturegithubactions.jpeg)
 
-**Click the thumbnail below to watch the video tutorial.**
+## 📌 Project Overview
 
-[![Watch the video](https://img.youtube.com/vi/witZ5ES_QVc/hqdefault.jpg)](https://youtu.be/witZ5ES_QVc?si=DKkZ_1bDVoWr-tta)
+This repository demonstrates how to provision a **Production-Ready Amazon EKS (Elastic Kubernetes Service)** cluster using **Terraform** and automate infrastructure deployment with **GitHub Actions**.
 
-## 🌟 Overview
-This project covers:
-- **Infrastructure as Code (IaC)**: Use Terraform to define and manage your EKS cluster.
-- **CI/CD Automation**: Leverage GitHub Actions to automate deployments.
+The project follows **Infrastructure as Code (IaC)** best practices and showcases a real-world DevOps workflow for deploying Kubernetes infrastructure on AWS.
 
-## 🌟 Comprehensive Guide
-For a detailed guide, please refer to my [blog post on Medium](https://medium.com/p/c046e8d44865).
+---
 
-## 🤝 Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+# 🏗️ Architecture
 
-## 📄 License
-This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+```
+Developer
+     │
+     ▼
+Git Push
+     │
+     ▼
+GitHub Repository
+     │
+     ▼
+GitHub Actions
+     │
+     ├── Terraform Format
+     ├── Terraform Validate
+     ├── Terraform Init
+     ├── Terraform Plan
+     └── Terraform Apply
+             │
+             ▼
+        AWS Infrastructure
+             │
+             ▼
+     Amazon VPC
+             │
+             ▼
+        Amazon EKS
+             │
+             ▼
+ Kubernetes Worker Nodes
+```
 
-## 🌐 Community Interaction
-- **Contribute**: Found an error or have valuable resources? Contribute to our learning on the [Discord Server](https://discord.com/invite/jdzF8kTtw2) !
-- **Discussions**: Join discussions, ask questions, and connect with fellow learners in the GitHub Discussions section.
+---
 
-## 📢 Spread the Word
-Share your journey with your network and tag me, [Aman Pathak](https://www.linkedin.com/in/aman-devops), when you post your blogs on LinkedIn. Let's learn together!
+# ✨ Features
 
-Happy learning and blogging! 🌟
-# EKS-Terraform-Project
+- ✅ Infrastructure as Code using Terraform
+- ✅ Production-ready Amazon EKS Cluster
+- ✅ Modular Terraform Architecture
+- ✅ GitHub Actions CI/CD Pipeline
+- ✅ Automated Terraform Validation
+- ✅ Automated Infrastructure Provisioning
+- ✅ Secure Remote State Management
+- ✅ Reusable Terraform Modules
+- ✅ IAM Roles and Policies
+- ✅ VPC, Subnets & Internet Gateway
+- ✅ EKS Managed Node Groups
+- ✅ Kubernetes Ready Infrastructure
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Terraform | Infrastructure as Code |
+| AWS EKS | Kubernetes Cluster |
+| AWS VPC | Networking |
+| IAM | Access Management |
+| GitHub Actions | CI/CD |
+| Git | Version Control |
+| Kubernetes | Container Orchestration |
+
+---
+
+# 📂 Repository Structure
+
+```
+EKS-Terraform-Project
+│
+├── .github/
+│   └── workflows/
+│        └── terraform.yml
+│
+├── modules/
+│   ├── eks/
+│   ├── vpc/
+│   └── iam/
+│
+├── terraform/
+│   ├── main.tf
+│   ├── provider.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── backend.tf
+│
+├── assets/
+│   └── architecturegithubactions.jpeg
+│
+└── README.md
+```
+
+---
+
+# ⚙️ GitHub Actions Workflow
+
+Every push to the repository automatically executes:
+
+- Checkout Repository
+- Setup Terraform
+- Terraform Format Check
+- Terraform Validation
+- Terraform Initialization
+- Terraform Plan
+- Terraform Apply *(Optional for Production)*
+
+This enables a fully automated Infrastructure-as-Code deployment pipeline.
+
+---
+
+# 🚀 Deployment
+
+Clone the repository
+
+```bash
+git clone https://github.com/darshant15/EKS-Terraform-Project.git
+
+cd EKS-Terraform-Project
+```
+
+Initialize Terraform
+
+```bash
+terraform init
+```
+
+Validate
+
+```bash
+terraform validate
+```
+
+Plan
+
+```bash
+terraform plan
+```
+
+Apply
+
+```bash
+terraform apply
+```
+
+---
+
+# 📈 CI/CD Flow
+
+```
+Developer
+    │
+    ▼
+Git Push
+    │
+    ▼
+GitHub Actions
+    │
+    ├── terraform fmt
+    ├── terraform validate
+    ├── terraform init
+    ├── terraform plan
+    └── terraform apply
+            │
+            ▼
+AWS Infrastructure
+            │
+            ▼
+Amazon EKS Cluster
+```
+
+---
+
+# 🔒 Best Practices Implemented
+
+- Infrastructure as Code (IaC)
+- Modular Terraform Design
+- GitHub Actions Automation
+- Version Controlled Infrastructure
+- Production-ready Architecture
+- Reusable Modules
+- Secure IAM Configuration
+- Automated Validation
+
+---
+
+# 📚 Learning Outcomes
+
+This project demonstrates hands-on experience with:
+
+- Terraform Modules
+- Amazon EKS
+- GitHub Actions
+- AWS IAM
+- AWS VPC
+- Kubernetes Infrastructure
+- CI/CD Automation
+- Infrastructure Provisioning
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions, and improvements are always welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the Apache 2.0 License.
+
+---
+
+# 👨‍💻 Author
+
+**Darshan T**
+
+Associate DevOps Engineer
+
+- GitHub: https://github.com/darshant15
+- LinkedIn: https://www.linkedin.com/in/darshant1501/
+
+---
+
+⭐ If you found this project useful, don't forget to **Star** the repository!
